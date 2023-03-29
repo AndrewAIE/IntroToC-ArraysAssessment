@@ -37,6 +37,9 @@ void Application::Load()
 	// -----------------------------------------------------
 	
 	// write your code here
+	for (int i = 0; i < ROWS * COLS; i++) {
+		m_tiles[i] = rand() % 5;
+	}
 
 	// -----------------------------------------------------
 }
@@ -81,11 +84,20 @@ void Application::Draw()
 	// 	   We have created a helper function you can use "GetTileColor"
 	// --------------------------------------------------------------------
 	// write your code here
-	float xPos = 0;
-	float yPos = 0;
-	Color color = GetTileColor(1); // pass in the tilevalue
+	float xPos = COLS * m_tileWidth;
+	float yPos = ROWS * m_tileHeight;
+	for (int rowIndex = 0; rowIndex < ROWS; rowIndex++)
+	{
+		for (int colIndex = 0; colIndex < COLS; colIndex++)
+		{
+			int index = colIndex + (rowIndex * COLS);
+			Color color = GetTileColor(m_tiles[index]);
+			DrawRectangle(xPos, yPos, m_tileWidth, m_tileHeight, color);
+		}		
+	}
+	 
 
-	DrawRectangle(xPos, yPos, m_tileWidth, m_tileHeight, color);
+	
 
 	// --------------------------------------------------------------------
 
