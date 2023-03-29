@@ -35,12 +35,6 @@ int main(int argc, char** argv)
 
 	// ------------------------------------------------------------------------
 
-
-
-
-
-
-
 	// Task 2:
 	// Print all values in the grid using a single loop
 	// Expected output:
