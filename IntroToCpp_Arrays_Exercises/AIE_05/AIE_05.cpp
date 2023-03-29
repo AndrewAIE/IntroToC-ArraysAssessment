@@ -24,7 +24,12 @@ int main(int argc, char** argv)
 	//		b0, b1, b2, b3, b4,
 	//		c0, c1, c2, c3, c4,
 	// ------------------------------------------------------------------------
-
+	for (int i = 0; i < ROWS; i++) {
+		for (int j = 0; j < COLS; j++) {
+			std::cout << grid2D[i][j] << ", ";
+		}
+		std::cout << std::endl;
+	}
 
 
 
